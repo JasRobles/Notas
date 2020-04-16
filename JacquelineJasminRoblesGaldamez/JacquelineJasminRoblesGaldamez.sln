@@ -1,0 +1,20 @@
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacquelineJasminRoblesGaldamez", "JacquelineJasminRoblesGaldamez\JacquelineJasminRoblesGaldamez.csproj", "{6A9220E5-B1A9-4B8A-A092-895CA8E247EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A9220E5-B1A9-4B8A-A092-895CA8E247EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A9220E5-B1A9-4B8A-A092-895CA8E247EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A9220E5-B1A9-4B8A-A092-895CA8E247EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A9220E5-B1A9-4B8A-A092-895CA8E247EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22CE2D5E-712E-428D-9942-3228B08BF028}
+	EndGlobalSection
+EndGlobal
