@@ -1,3 +1,6 @@
+﻿
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacquelineJasminRoblesGaldamez", "JacquelineJasminRoblesGaldamez\JacquelineJasminRoblesGaldamez.csproj", "{6A9220E5-B1A9-4B8A-A092-895CA8E247EB}"
 EndProject
 Global
