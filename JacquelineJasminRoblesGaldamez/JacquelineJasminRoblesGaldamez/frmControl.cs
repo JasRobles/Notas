@@ -38,5 +38,14 @@ namespace JacquelineJasminRoblesGaldamez
             c.MdiParent = this;
             c.Show();
         }
+
+        private void notasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmNotas n = new frmNotas();
+            n.MdiParent = this;
+            n.Show();
+
+        }
     }
 }
