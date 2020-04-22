@@ -48,6 +48,7 @@
             this.dgvEstudiante.AllowUserToAddRows = false;
             this.dgvEstudiante.AllowUserToDeleteRows = false;
             this.dgvEstudiante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEstudiante.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiante.Location = new System.Drawing.Point(31, 86);
             this.dgvEstudiante.Name = "dgvEstudiante";
@@ -156,6 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(878, 450);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);

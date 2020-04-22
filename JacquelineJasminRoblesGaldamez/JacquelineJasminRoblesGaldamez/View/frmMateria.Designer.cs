@@ -60,6 +60,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnGuardar.Location = new System.Drawing.Point(715, 108);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
@@ -73,6 +74,7 @@
             this.dgvMaterias.AllowUserToAddRows = false;
             this.dgvMaterias.AllowUserToDeleteRows = false;
             this.dgvMaterias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMaterias.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Location = new System.Drawing.Point(26, 75);
             this.dgvMaterias.Name = "dgvMaterias";
@@ -109,6 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(898, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

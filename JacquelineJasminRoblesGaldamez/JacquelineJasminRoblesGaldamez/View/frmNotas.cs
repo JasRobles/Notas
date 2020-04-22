@@ -84,7 +84,7 @@ namespace JacquelineJasminRoblesGaldamez.View
                 if (materias.Count > 0)
                 {
                     cmbMateria.DataSource = materias;
-                    cmbMateria.DisplayMember = "nombre_Materia";
+                    cmbMateria.DisplayMember = "nombre";
                     cmbMateria.ValueMember = "idMateria";
 
                 }
