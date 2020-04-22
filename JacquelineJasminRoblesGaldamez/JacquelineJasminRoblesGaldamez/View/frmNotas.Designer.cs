@@ -41,9 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMateria = new System.Windows.Forms.ComboBox();
-            this.cmbNota = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbEstudiante = new System.Windows.Forms.ComboBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +126,7 @@
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -135,6 +136,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label1
             // 
@@ -161,14 +163,7 @@
             this.cmbMateria.Name = "cmbMateria";
             this.cmbMateria.Size = new System.Drawing.Size(155, 21);
             this.cmbMateria.TabIndex = 6;
-            // 
-            // cmbNota
-            // 
-            this.cmbNota.FormattingEnabled = true;
-            this.cmbNota.Location = new System.Drawing.Point(585, 76);
-            this.cmbNota.Name = "cmbNota";
-            this.cmbNota.Size = new System.Drawing.Size(156, 21);
-            this.cmbNota.TabIndex = 7;
+            this.cmbMateria.SelectedIndexChanged += new System.EventHandler(this.cmbMateria_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -186,15 +181,24 @@
             this.cmbEstudiante.Name = "cmbEstudiante";
             this.cmbEstudiante.Size = new System.Drawing.Size(158, 21);
             this.cmbEstudiante.TabIndex = 9;
+            this.cmbEstudiante.SelectedIndexChanged += new System.EventHandler(this.cmbEstudiante_SelectedIndexChanged);
+            // 
+            // txtNota
+            // 
+            this.txtNota.Location = new System.Drawing.Point(556, 76);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(100, 20);
+            this.txtNota.TabIndex = 10;
+            this.txtNota.SizeChanged += new System.EventHandler(this.Notas_Load);
             // 
             // frmNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 426);
+            this.Controls.Add(this.txtNota);
             this.Controls.Add(this.cmbEstudiante);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbNota);
             this.Controls.Add(this.cmbMateria);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -222,7 +226,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbMateria;
-        private System.Windows.Forms.ComboBox cmbNota;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
@@ -231,5 +234,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Estudiante;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbEstudiante;
+        private System.Windows.Forms.TextBox txtNota;
     }
 }

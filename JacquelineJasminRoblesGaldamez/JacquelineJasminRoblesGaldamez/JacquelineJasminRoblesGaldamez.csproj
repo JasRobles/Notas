@@ -105,6 +105,12 @@
     <Compile Include="View\frmNotas.Designer.cs">
       <DependentUpon>frmNotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmLoguin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLoguin.Designer.cs">
+      <DependentUpon>frmLoguin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmControl.resx">
       <DependentUpon>frmControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmNotas.resx">
       <DependentUpon>frmNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLoguin.resx">
+      <DependentUpon>frmLoguin.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Control_Notas.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

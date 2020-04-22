@@ -23,6 +23,7 @@ namespace JacquelineJasminRoblesGaldamez.View
 
             Cargardatos();
             CargarCombo();
+            offEditar();
         }
 
         public void Cargardatos()
@@ -56,7 +57,7 @@ namespace JacquelineJasminRoblesGaldamez.View
 
         }
 
-        private void cmbEstudiantes_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbEstudiante_SelectedIndexChanged(object sender, EventArgs e)
         {
             Student = cmbEstudiante.SelectedValue.ToString();
 
@@ -71,12 +72,12 @@ namespace JacquelineJasminRoblesGaldamez.View
         {
             using (ControlNotasEntities db = new ControlNotasEntities())
             {
-                var estud = db.Estudiantes.ToList();
-                if (estud.Count > 0)
+                var Est = db.Estudiantes.ToList();
+                if (Est.Count > 0)
                 {
-                    cmbEstudiante.DataSource = estud;
+                    cmbEstudiante.DataSource = Est;
                     cmbEstudiante.DisplayMember = "nombre";
-                    cmbEstudiante.ValueMember = "id_Estudiante";
+                    cmbEstudiante.ValueMember = "idEstudiante";
 
                 }
                 var materias = db.Materias.ToList();
@@ -84,10 +85,26 @@ namespace JacquelineJasminRoblesGaldamez.View
                 {
                     cmbMateria.DataSource = materias;
                     cmbMateria.DisplayMember = "nombre_Materia";
-                    cmbMateria.ValueMember = "id_Materia";
+                    cmbMateria.ValueMember = "idMateria";
 
                 }
             }
+        }
+
+     
+        public void offEditar()
+        {
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = true;
+        }
+
+        public void onGuardar()
+        {
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnGuardar.Enabled = false;
+
         }
 
         private void Notas_Load(object sender, EventArgs e)
@@ -99,16 +116,104 @@ namespace JacquelineJasminRoblesGaldamez.View
 
         private void dgvNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string notas = dgvNotas.CurrentRow.Cells[3].Value.ToString();
+            txtNota.Text = notas;
+            string Materia = dgvNotas.CurrentRow.Cells[4].Value.ToString();
+            Mat = Materia;
+            string Estud = dgvNotas.CurrentRow.Cells[5].Value.ToString();
+            Student = Estud;
 
-
+            onGuardar();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            using (ControlNotasEntities db = new ControlNotasEntities())
+            {
+                int E = int.Parse(Student);
+                n.idEstudiante = E;
+                int M = int.Parse(Mat);
+                n.idMateria = M;
+                string note = txtNota.Text;
+                double N = double.Parse(note);
+                n.Nota = N;
+                db.Notas.Add(n);
+                db.SaveChanges();
+                Cargardatos();
+                txtNota.Text = "";
+            }
+           
 
 
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            using (ControlNotasEntities db = new ControlNotasEntities())
+            {
+                result = MessageBox.Show("¿Desea realizar los cambios?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                if (result == DialogResult.Yes)
+                {
+                    string id = dgvNotas.CurrentRow.Cells[0].Value.ToString();
+                    int ID = int.Parse(id);
+                    n = db.Notas.Where(verificarId => verificarId.idNota == ID).First();
+                    int E = int.Parse(Student);
+                    n.idEstudiante = E;
+                    int Materia = int.Parse(Mat);
+                    n.idMateria = Materia;
+                    string nota = txtNota.Text;
+                    double N = double.Parse(nota);
+                    n.Nota = N;
+                    db.Entry(n).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    offEditar();
+                    Cargardatos();
+                    cmbEstudiante.Enabled = true;
+                    cmbMateria.Enabled = true;
+                    txtNota.Text = "";
+
+
+                }
+                else
+                {
+                    offEditar();
+                    txtNota.Text = "";
+                    cmbEstudiante.Enabled = true;
+                    cmbMateria.Enabled = true;
+                }
+
+            }
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            using (ControlNotasEntities db = new ControlNotasEntities())
+            {
+                result = MessageBox.Show("¿Desea eliminar este registro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+                if (result == DialogResult.Yes)
+                {
+                    string id = dgvNotas.CurrentRow.Cells[0].Value.ToString();
+                    int ID = int.Parse(id);
+
+                    n = db.Notas.Find(ID);
+                    db.Notas.Remove(n);
+                    db.SaveChanges();
+                    Cargardatos();
+                    txtNota.Text = "";
+                    offEditar();
+                }
+                else
+                {
+                    txtNota.Text = "";
+                }
+            }
         }
     }
 }

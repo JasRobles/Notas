@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JacquelineJasminRoblesGaldamez.View;
 
 namespace JacquelineJasminRoblesGaldamez
 {
@@ -16,7 +17,7 @@ namespace JacquelineJasminRoblesGaldamez
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmControl());
+            Application.Run(new frmLoguin());
         }
     }
 }
